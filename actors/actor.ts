@@ -1,6 +1,5 @@
 export interface Actor {
-    x: number;
-    y: number;
+    position: {x:number, y:number}
     ctx: CanvasRenderingContext2D;
 
     constructor(x:number, y:number, ctx:CanvasRenderingContext2D)
