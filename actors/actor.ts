@@ -4,5 +4,5 @@ export interface Actor {
 
     update(delta:number);
     draw(delta:number, ctx:CanvasRenderingContext2D);
-    keyboard_event(key);
+    keyboard_event(key:string);
 }
