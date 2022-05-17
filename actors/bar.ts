@@ -12,9 +12,9 @@ export class Bar implements Actor {
     update(delta: number) {
     }
     draw(delta: number, ctx: CanvasRenderingContext2D) {
-        ctx.strokeStyle = "black";
-        ctx.fillStyle = "black";
-        ctx.rect(10, 20, 150, 100);
+        ctx.strokeStyle = "red";
+        ctx.fillStyle = "red";
+        ctx.rect(this.position.x, this.position.y, 50, 25);
         ctx.fill();
     }
     keyboard_event(key: string) {

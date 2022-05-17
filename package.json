@@ -10,7 +10,7 @@
     "clean": "rimraf docs dist"
   },
   "keywords": [],
-  "author": "Julián Egea Ponce - 2022",
+  "author": "Github@Julianegpo - 2022",
   "license": "ISC",
   "dependencies": {
     "parcel": "^2.5.0",
