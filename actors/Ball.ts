@@ -5,12 +5,14 @@ import { Bar } from "./bar";
 export class Ball implements Actor {
     position: { x: number; y: number; };
     ctx: CanvasRenderingContext2D;
-    speed: { dx: number, dy: number }
+    speed: { dx: number, dy: number };
+    playerBar: Bar;
 
-    constructor(playerBarPosition, ctx: CanvasRenderingContext2D) {
-        this.position = { x: playerBarPosition.x, y: playerBarPosition.y };
+    constructor(playerBar, ctx: CanvasRenderingContext2D) {
+        this.position = { x: playerBar.position.x, y: playerBar.position.y };
         this.ctx = ctx;
-        this.speed = { dx: 2, dy: 4 }
+        this.speed = { dx: 2, dy: 4 };
+        this.playerBar = playerBar;
     }
     update(delta: number, canvasWidth, canvasHeight) {
         if (this.position.x + this.speed.dx > canvasWidth
@@ -19,7 +21,9 @@ export class Ball implements Actor {
         if (this.position.y + this.speed.dy > canvasHeight
             || this.position.y + this.speed.dy < 0)
             this.speed.dy = -this.speed.dy;
-
+        // if () {
+            
+        // }
         this.position.x += this.speed.dx*(delta*200);
         this.position.y += this.speed.dy*(delta*200);
     }

@@ -37,7 +37,7 @@ window.onload = () => {
 function generateActors(ctx, canvas) {
     const actors = [];
     let playerBar = new Bar({ x: (canvas.width) / 2, y: (canvas.height) / 2 }, ctx);
-    let ball = new Ball({ x: playerBar.position.x, y: playerBar.position.y }, ctx);
+    let ball = new Ball(playerBar, ctx);
     actors.push(playerBar);
     console.log(ball);
     actors.push(ball);
