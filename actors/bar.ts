@@ -4,12 +4,21 @@ import { Constants } from "../assets/utils/Constants";
 export class Bar implements Actor {
     position: { x: number; y: number; };
     ctx: CanvasRenderingContext2D;
+    speed: number;
 
-    constructor(position, ctx: CanvasRenderingContext2D) {
+    constructor(position, ctx: CanvasRenderingContext2D, speed = 5) {
         this.position = { x: position.x, y: position.y };
         this.ctx = ctx;
+        this.speed = speed;
     }
     update(delta: number) {
+        // this.position.x += this.speed;
+        // if (condition) {
+            
+        // }
+        // if (condition) {
+            
+        // }
     }
     draw(delta: number, ctx: CanvasRenderingContext2D) {
         ctx.strokeStyle = "white";
@@ -20,13 +29,10 @@ export class Bar implements Actor {
     keyboard_event(key: string) {
         switch (key) {
             case Constants.KEYDOWN_ARROW_RIGHT:
-                console.log("right");
                 break;
             case Constants.KEYDOWN_ARROW_LEFT:
-                console.log("left");
                 break;
             default:
-                console.log("not a valid key for player");
                 break;
         }
     }
