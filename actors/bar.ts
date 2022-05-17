@@ -12,8 +12,8 @@ export class Bar implements Actor {
     update(delta: number) {
     }
     draw(delta: number, ctx: CanvasRenderingContext2D) {
-        ctx.strokeStyle = "red";
-        ctx.fillStyle = "red";
+        ctx.strokeStyle = "white";
+        ctx.fillStyle = "white";
         ctx.rect(this.position.x, this.position.y, 50, 25);
         ctx.fill();
     }
@@ -26,7 +26,7 @@ export class Bar implements Actor {
                 console.log("left");
                 break;
             default:
-                console.log("not a valid key");
+                console.log("not a valid key for player");
                 break;
         }
     }
