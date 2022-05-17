@@ -21,11 +21,13 @@ export class Ball implements Actor {
         if (this.position.y + this.speed.dy > canvasHeight
             || this.position.y + this.speed.dy < 0)
             this.speed.dy = -this.speed.dy;
-        // if () {
-            
-        // }
-        this.position.x += this.speed.dx*(delta*200);
-        this.position.y += this.speed.dy*(delta*200);
+        else if (this.position.y + this.speed.dy > canvasHeight) {
+            if (this.position.x > this.playerBar.position.x
+                && this.position.x < this.playerBar.position.x + 125)
+                this.speed.dy = -this.speed.dy;
+        }
+        this.position.x += this.speed.dx * (delta * 200);
+        this.position.y += this.speed.dy * (delta * 200);
     }
     draw(delta: number, ctx: CanvasRenderingContext2D) {
         ctx.strokeStyle = "pink";

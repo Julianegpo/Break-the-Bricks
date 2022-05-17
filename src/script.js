@@ -39,10 +39,20 @@ function generateActors(ctx, canvas) {
     let playerBar = new Bar({ x: (canvas.width) / 2, y: (canvas.height) / 2 }, ctx);
     let ball = new Ball(playerBar, ctx);
     actors.push(playerBar);
-    console.log(ball);
     actors.push(ball);
+    actors.push(spawnBricks(ctx, canvas));
     return actors;
 }
 
 // spawn bricks based on map
-function spawnBricks() { }
+function spawnBricks(ctx, canvas) {
+    let bricks = [];
+    let rows = 5;
+    let col = 5;
+    for (let i = 0; i < rows; i++) {
+
+        for (let j = 0; j < col; j++) {
+
+        }
+    }
+ }
