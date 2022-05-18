@@ -6,7 +6,7 @@ window.onload = () => {
     // onload setup getting canvas and generating actors
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
-    
+    // ctx.translate(canvas.width/2, canvas.height/2);
     let actors = generateActors(ctx, canvas);
 
     // render phase
@@ -37,8 +37,8 @@ window.onload = () => {
 // generate the player bar and bricks for game start
 function generateActors(ctx, canvas) {
     const actors = [];
-    let playerBar = new Bar({ x: (canvas.width) / 2, y: 300 }, ctx, canvas);
-    let ball = new Ball(playerBar, ctx);
+    let playerBar = new Bar({ x: (canvas.width)/2, y: 450 }, ctx);
+    let ball = new Ball({x: canvas.width/2, y: canvas.height/2}, ctx, playerBar);
     actors.push(playerBar);
     actors.push(ball);
     // actors.push(spawnBricks(ctx, canvas));

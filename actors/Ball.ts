@@ -8,8 +8,8 @@ export class Ball implements Actor {
     speed: { dx: number, dy: number };
     playerBar: Bar;
 
-    constructor(playerBar, ctx: CanvasRenderingContext2D) {
-        this.position = { x: playerBar.position.x, y: 450 };
+    constructor(position, ctx: CanvasRenderingContext2D, playerBar) {
+        this.position = { x: position.x, y: position.y };
         this.ctx = ctx;
         this.speed = { dx: 2, dy: 4 };
         this.playerBar = playerBar;
@@ -25,22 +25,28 @@ export class Ball implements Actor {
 
         // colider with bar
         if (this.position.x > this.playerBar.position.x
-            && this.position.x < this.playerBar.position.x + 125
+            && this.position.x < this.playerBar.position.x + 80
             && this.position.y > this.playerBar.position.y
-            && this.position.y < this.playerBar.position.y + 25) {
-            console.log("colide");
+            && this.position.y < this.playerBar.position.y + 15) {
             this.speed.dy = -this.speed.dy;
         }
 
+        // if ball reaches bottom, game over
+        if (this.position.y > canvasHeight
+            || this.position.y > (this.playerBar.position.y+15)) {
+            this.position.x = 0;
+            this.position.y = 0;
+        }
+
         // ball movement
-        this.position.x += this.speed.dx * (delta * 200);
-        this.position.y += this.speed.dy * (delta * 200);
+        this.position.x += this.speed.dx * (delta * 100);
+        this.position.y += this.speed.dy * (delta * 100);
     }
     draw(delta: number, ctx: CanvasRenderingContext2D) {
         ctx.strokeStyle = "pink";
         ctx.fillStyle = "pink";
         ctx.beginPath();
-        ctx.arc(this.position.x + 25, this.position.y - 20, 10, 0, Math.PI * 2, true);
+        ctx.arc(this.position.x, this.position.y, 10, 0, Math.PI * 2, true);
         ctx.closePath();
         ctx.fill();
     }
