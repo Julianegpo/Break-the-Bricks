@@ -32,10 +32,9 @@ export class Ball implements Actor {
         }
 
         // if ball reaches bottom, game over
-        if (this.position.y > canvasHeight
-            || this.position.y > (this.playerBar.position.y+15)) {
-            this.position.x = 0;
-            this.position.y = 0;
+        if (this.position.y >= canvasHeight - 10) {
+            this.speed.dx = 0;
+            this.speed.dy = 0;
         }
 
         // ball movement

@@ -37,8 +37,8 @@ window.onload = () => {
 // generate the player bar and bricks for game start
 function generateActors(ctx, canvas) {
     const actors = [];
-    let playerBar = new Bar({ x: (canvas.width)/2, y: 450 }, ctx);
-    let ball = new Ball({x: canvas.width/2, y: canvas.height/2}, ctx, playerBar);
+    let playerBar = new Bar({ x: (canvas.width) / 2, y: 450 }, ctx);
+    let ball = new Ball({ x: 250, y: 100 }, ctx, playerBar);
     actors.push(playerBar);
     actors.push(ball);
     // actors.push(spawnBricks(ctx, canvas));
@@ -50,10 +50,6 @@ function spawnBricks(ctx, canvas) {
     let bricks = [];
     let rows = 5;
     let col = 5;
-    for (let i = 0; i < rows; i++) {
 
-        for (let j = 0; j < col; j++) {
-
-        }
-    }
- }
+    
+}

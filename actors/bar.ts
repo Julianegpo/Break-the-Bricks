@@ -12,13 +12,11 @@ export class Bar implements Actor {
         this.speed = speed;
     }
     update(delta: number, canvasWidth) {
-        if (this.position.x + 80 >= canvasWidth) {
-            this.speed = 0;
+        let newPosition = this.position.x + (this.speed * delta)
+        if (newPosition + 80 <= canvasWidth
+            && newPosition >= 0) {
+            this.position.x = newPosition;
         }
-        if (this.position.x <= 0) {
-            this.speed = 0;
-        }
-        this.position.x += this.speed * (delta * 25);
     }
     draw(delta: number, ctx: CanvasRenderingContext2D) {
         ctx.strokeStyle = "white";
@@ -29,12 +27,10 @@ export class Bar implements Actor {
     keyboard_event(key: string) {
         switch (key) {
             case Constants.KEYDOWN_ARROW_RIGHT:
-                console.log("right");
-                this.speed = 15;
+                this.speed = 225;
                 break;
             case Constants.KEYDOWN_ARROW_LEFT:
-                console.log("left");
-                this.speed = -15;
+                this.speed = -225;
                 break;
             default:
                 break;
