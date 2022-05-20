@@ -1,3 +1,4 @@
+import { Constants } from "../assets/utils/Constants";
 import { Actor } from "./actor";
 import { Bar } from "./Bar";
 
@@ -10,7 +11,7 @@ export class Ball implements Actor {
     constructor(position, ctx: CanvasRenderingContext2D, playerBar: Bar) {
         this.position = { x: position.x, y: position.y };
         this.ctx = ctx;
-        this.speed = { dx: 2, dy: 4 };
+        this.speed = { dx: 0, dy: 0 };
         this.playerBar = playerBar;
     }
     update(delta: number, canvasWidth, canvasHeight) {
@@ -47,5 +48,11 @@ export class Ball implements Actor {
         ctx.closePath();
         ctx.fill();
     }
-    keyboard_event(key: string) { }
+    keyboard_event(key: string) { 
+        if (key === Constants.KEYDOWN_SPACEBAR) {
+            // ball movement
+            this.speed.dx = 2;
+            this.speed.dy = 4;
+        }
+    }
 }
