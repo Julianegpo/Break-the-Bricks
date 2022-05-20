@@ -1,5 +1,5 @@
 import { Constants } from "../assets/utils/Constants";
-import { Actor } from "./actor";
+import { Actor } from "./Actor";
 import { Bar } from "./Bar";
 
 export class Ball implements Actor {

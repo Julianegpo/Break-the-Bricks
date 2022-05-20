@@ -1,4 +1,4 @@
-import { Actor } from "./actor";
+import { Actor } from "./Actor";
 
 export class FPSViewer implements Actor {
     position: { x: number; y: number; };

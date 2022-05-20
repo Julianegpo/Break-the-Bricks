@@ -1,4 +1,4 @@
-import { Actor } from "./actor";
+import { Actor } from "./Actor";
 import { Constants } from "../assets/utils/Constants";
 
 export class Bar implements Actor {

@@ -1,5 +1,5 @@
-import { Actor } from "./actor";
-import { Brick } from "./brick";
+import { Actor } from "./Actor";
+import { Brick } from "./Brick";
 
 export class BrickManager implements Actor {
     position: { x: number; y: number; };
