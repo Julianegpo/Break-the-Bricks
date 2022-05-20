@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("/assets/img/arkanoid-bg.png");
+    background-image: url("/assets/img/backgrounds/arkanoid-bg.png");
 }
 
 #canvas {
