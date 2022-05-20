@@ -37,7 +37,7 @@ window.onload = () => {
 // generate the player bar and bricks for game start
 function generateActors(ctx, canvas) {
     const fpsViewer = new FPSViewer({ x: (canvas.width/2)-20, y: canvas.height });
-    const playerBar = new Bar({ x: (canvas.width) / 2, y: 450 }, ctx);
+    const playerBar = new Bar({ x: (canvas.width / 2) - 40 , y: 450 }, ctx);
     const ball = new Ball({ x: 250, y: 100 }, ctx, playerBar);
 
     return [
