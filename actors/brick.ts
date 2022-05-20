@@ -1,47 +1,28 @@
-import { Actor } from "./actor";
+import { Actor } from "./Actor";
+import { Ball } from "./Ball";
 
 export class Brick implements Actor {
     position: { x: number; y: number; };
     ctx: CanvasRenderingContext2D;
     width: number;
     height: number;
-    padding: number;
-    bricks: any;
-    rows: number;
-    col: number;
+    destroyed: boolean;
+    ball: Ball;
 
-    constructor(position, ctx, width, height, padding = 1) {
-        this.rows = 5;
-        this.col = 5;
-        this.bricks = new Array(NROWS);
-        for (i = 0; i < NROWS; i++) {
-            bricks[i] = new Array(NCOLS);
-            for (j = 0; j < NCOLS; j++) {
-                bricks[i][j] = 1;
-            }
-        }
+    constructor(position, ctx: CanvasRenderingContext2D, ball: Ball, width = 100, height = 25) {
+        this.position = { x: position.x, y: position.y }
+        this.ctx = ctx;
+        this.width = width;
+        this.height = height;
+        this.destroyed = false;
+        this.ball = ball;
     }
-    update(delta: number) {
-        throw new Error("Method not implemented.");
-    }
+    update(delta: number) { }
     draw(delta: number, ctx: CanvasRenderingContext2D) {
         ctx.strokeStyle = "yellow";
         ctx.fillStyle = "yellow";
         ctx.rect(this.position.x, this.position.y, 125, 25);
         ctx.fill();
-
-        for (let i = 0; i < rows; i++) {
-            for (let j = 0; j < col; j++) {
-                if (this.bricks[i][j] == 1) {
-                    rect((j * (BRICKWIDTH + PADDING)) + PADDING,
-                        (i * (BRICKHEIGHT + PADDING)) + PADDING,
-                        BRICKWIDTH, BRICKHEIGHT);
-                }
-            }
-        }
     }
-    keyboard_event(key: any) {
-        throw new Error("Method not implemented.");
-    }
-
+    keyboard_event(key: any) { }
 }

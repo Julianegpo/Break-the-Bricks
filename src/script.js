@@ -1,12 +1,12 @@
 import { Ball } from "../actors/Ball";
-import { Bar } from "../actors/bar";
+import { Bar } from "../actors/Bar";
+import { FPSViewer } from "../actors/FPSViewer";
 import { Constants } from "../assets/utils/Constants";
 
 window.onload = () => {
     // onload setup getting canvas and generating actors
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
-    // ctx.translate(canvas.width/2, canvas.height/2);
     let actors = generateActors(ctx, canvas);
 
     // render phase
@@ -36,20 +36,13 @@ window.onload = () => {
 
 // generate the player bar and bricks for game start
 function generateActors(ctx, canvas) {
-    const actors = [];
-    let playerBar = new Bar({ x: (canvas.width) / 2, y: 450 }, ctx);
-    let ball = new Ball({ x: 250, y: 100 }, ctx, playerBar);
-    actors.push(playerBar);
-    actors.push(ball);
-    // actors.push(spawnBricks(ctx, canvas));
-    return actors;
-}
+    const fpsViewer = new FPSViewer({ x: (canvas.width/2)-20, y: canvas.height });
+    const playerBar = new Bar({ x: (canvas.width) / 2, y: 450 }, ctx);
+    const ball = new Ball({ x: 250, y: 100 }, ctx, playerBar);
 
-// spawn bricks based on map
-function spawnBricks(ctx, canvas) {
-    let bricks = [];
-    let rows = 5;
-    let col = 5;
-
-    
+    return [
+        fpsViewer,
+        playerBar,
+        ball
+    ];
 }
