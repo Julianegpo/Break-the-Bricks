@@ -9,8 +9,6 @@
 
 [Play here!](https://julianegpo.github.io/break-the-bricks/)
 
-Mid-season project at CORE Code School.
-
 ![](assets%5Cimg%5Creadme%5Cgame-img.PNG)
 
 # Table of content
@@ -24,6 +22,8 @@ Mid-season project at CORE Code School.
 1. [Gratitudes](#gratitudes)
 
 # About the game
+
+Mid-season project at CORE Code School.
 
 The game is based on the world-famous-arcade game from 80s, Arkanoid!
 
@@ -47,13 +47,17 @@ In this project there are this dependencies:
 
 # Setting up
 
-To initialize the project in your local, you must have install `npm` and run `npm install` This command will download all the dependencies at `packaje.json`
+To initialize the project at your local, you must have installed `npm` and run
+
+`npm install`. 
+
+This command will download all the dependencies at `packaje.json`.
 
 ## Build and deployment
 
-This project is prepared to be hosted in [Github Pages](https://pages.github.com/)
+This project is prepared to be hosted in [Github Pages](https://pages.github.com/).
 
-In order to deploy, you must execute one of the scripts hosted in `package.json`
+In order to deploy, you must execute one of the scripts hosted in `package.json`.
 
 - `npm run dev` -> you must have run the command `npm install` before in order to have installed `Parcel` and this will run `parcel .src/index.html`.
 - `npm run build` -> this command executes the `clean` script and `ghbuild`.
