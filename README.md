@@ -9,7 +9,7 @@
 
 [Play here!](https://julianegpo.github.io/break-the-bricks/)
 
-![](assets%5Cimg%5Creadme%5Cgame-img.PNG)
+![](assets\img\readme\game-img.PNG)
 
 # Table of content
 
