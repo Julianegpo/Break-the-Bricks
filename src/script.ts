@@ -1,12 +1,11 @@
 import { Ball } from "../actors/Ball";
 import { Bar } from "../actors/Bar";
 import { FPSViewer } from "../actors/FPSViewer";
-import { Constants } from "../assets/utils/Constants";
 
 window.onload = () => {
     // onload setup getting canvas and generating actors
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
+    const canvas = document.getElementById('canvas') as HTMLCanvasElement;
+    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
     let actors = generateActors(ctx, canvas);
 
     // render phase
@@ -27,7 +26,7 @@ window.onload = () => {
     window.requestAnimationFrame(render);
 
     // registering keyboard inputs for player movement
-    document.body.addEventListener(Constants.KEY_EVENT_KEYDOWN, (e) => {
+    document.body.addEventListener('keydown', (e) => {
         actors.forEach((actor) => {
             actor.keyboard_event(e.key);
         });
@@ -35,9 +34,9 @@ window.onload = () => {
 }
 
 // generate the player bar and bricks for game start
-function generateActors(ctx, canvas) {
-    const fpsViewer = new FPSViewer({ x: (canvas.width/2)-20, y: canvas.height });
-    const playerBar = new Bar({ x: (canvas.width / 2) - 40 , y: 450 }, ctx);
+function generateActors(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
+    const fpsViewer = new FPSViewer({ x: (canvas.width / 2) - 50, y: canvas.height });
+    const playerBar = new Bar({ x: (canvas.width / 2) - 40, y: 450 }, ctx);
     const ball = new Ball({ x: 250, y: 100 }, ctx, playerBar);
 
     return [
