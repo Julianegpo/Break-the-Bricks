@@ -1,5 +1,6 @@
 import { Ball } from "../actors/Ball";
 import { Bar } from "../actors/Bar";
+import { BrickManager } from "../actors/BrickManager";
 import { FPSViewer } from "../actors/FPSViewer";
 
 window.onload = () => {
@@ -38,10 +39,12 @@ function generateActors(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement
     const fpsViewer = new FPSViewer({ x: (canvas.width / 2) - 50, y: canvas.height });
     const playerBar = new Bar({ x: (canvas.width / 2) - 40, y: 450 }, ctx);
     const ball = new Ball({ x: 250, y: 100 }, ctx, playerBar);
+    const brickManager = new BrickManager(ctx);
 
     return [
         fpsViewer,
         playerBar,
-        ball
+        ball,
+        brickManager
     ];
 }
