@@ -24,11 +24,20 @@ export class Ball implements Actor {
             this.speed.dy = -this.speed.dy;
 
         // collider with bar
+        // if (this.position.x > this.playerBar.position.x
+        //     && this.position.x < this.playerBar.position.x + 80
+        //     && this.position.y > this.playerBar.position.y
+        //     && this.position.y < this.playerBar.position.y + 15)
+        //     this.speed.dy = -this.speed.dy;
+
+        // new bar collider
         if (this.position.x > this.playerBar.position.x
-            && this.position.x < this.playerBar.position.x + 80
+            && this.position.x < this.playerBar.position.x + this.playerBar.width
             && this.position.y > this.playerBar.position.y
-            && this.position.y < this.playerBar.position.y + 15)
+            && this.position.y < this.playerBar.position.y + this.playerBar.height) {
+            this.speed.dx = 8 * ((this.position.x - (this.playerBar.position.x + 80 / 2)) / 80);
             this.speed.dy = -this.speed.dy;
+        }
 
         // if ball reaches bottom, game over
         if (this.position.y >= canvasHeight - 10) {
@@ -48,7 +57,7 @@ export class Ball implements Actor {
         ctx.closePath();
         ctx.fill();
     }
-    keyboard_event(key: string) { 
+    keyboard_event(key: string) {
         if (key === Constants.KEYDOWN_SPACEBAR) {
             // ball movement
             this.speed.dx = 2;
