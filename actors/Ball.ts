@@ -23,13 +23,6 @@ export class Ball implements Actor {
             || this.position.y + this.speed.dy <= 0)
             this.speed.dy = -this.speed.dy;
 
-        // collider with bar
-        // if (this.position.x > this.playerBar.position.x
-        //     && this.position.x < this.playerBar.position.x + 80
-        //     && this.position.y > this.playerBar.position.y
-        //     && this.position.y < this.playerBar.position.y + 15)
-        //     this.speed.dy = -this.speed.dy;
-
         // new bar collider
         if (this.position.x > this.playerBar.position.x
             && this.position.x < this.playerBar.position.x + this.playerBar.width
